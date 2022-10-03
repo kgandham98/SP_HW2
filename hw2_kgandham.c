@@ -8,6 +8,26 @@
 #include <limits.h>
 #include <unistd.h>
 
+typedef int fncOne(const char* a);
+
+
+typedef char* fncTwo(char* b);
+
+
+typedef void fncThree(char* dirname, int count, int size, int depth, char* substring, char* other);
+
+int opfunc(const char* a, fncOne *f) {
+return f(a);
+}
+
+char* opfunc1(char* b, fncTwo *f) {
+return f(b);
+}
+
+void opfunc2(char* dirname, int count, int size, int depth, char* substring, char* other,fncThree *f) {
+return f(dirname,count,size,depth,substring,other);
+}
+
 
 int isDir(const char* fileName)
 {
